@@ -5,8 +5,89 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro e Listagem de Contas</title>
+
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/bootstrap/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </head>
 <body>
+    <header >
+        <div style="height: 60px; background: #f2f9ee">
+            <nav class="navbar navbar-expand-lg navbar-light top-navbar" data-toggle="sticky-onscroll">
+                <div class="container">
+                    <a class="navbar-brand" href="#">Simulador Web Operações Contábeis</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
     
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                        <ul class="navbar-nav pull-right">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="./index.html">Início</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./cadastro_contas.html">Cadastros de Contas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./lancamentos.html">Lançamentos</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Relatórios</a>
+                                <div class="dropdown-menu">
+                                  <a class="dropdown-item" href="#">Relatório Balanço</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a class="dropdown-item" href="#">Relatório DRE</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a class="dropdown-item" href="#">Relatório de PC</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a class="dropdown-item" href="#">Relatório de Razão</a>
+                                </div>
+                              </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h3>Cadastro de plano de contas</h3>
+        <form id="contasForm">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label class="form-label" for="codigo">Código da conta</label>
+                        <input class="form-control" type="text" name="codigo" id="codigo" placeholder="Digite o código da conta" required>            
+                    </div>
+                </div>
+                
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label class="form-label" for="descricao">Nome da conta</label>
+                        <input class="form-control" type="text" name="nome" id="nome" placeholder="Digite o nome da conta" required>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label class="form-label">&nbsp;</label>
+                        <button type="submit" class="form-control btn btn-outline-secondary">Cadastrar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <h3>Listagem das contas</h3>
+        <table id="contasTable">
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Nome</th>
+                </tr>
+            </thead>
+            <tbody id="bodyContas"></tbody>
+        </table>
+    </main>
+
 </body>
 </html>
