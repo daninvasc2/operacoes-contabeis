@@ -5,8 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lançamentos</title>
+    <!-- import bootstrap from assets folder -->
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <!-- import custom css from assets folder -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- import bootstrap js from assets folder -->
+    <script src="assets/bootstrap/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <!-- import jquery from assets folder -->
 </head>
 <body>
+    <header >
+        <div style="height: 60px; background: #f2f9ee">
+            <nav class="navbar navbar-expand-lg navbar-light top-navbar" data-toggle="sticky-onscroll">
+                <div class="container">
+                    <a class="navbar-brand" href="./index.html">Simulador Web Operações Contábeis</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
     
+                    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                        <ul class="navbar-nav pull-right">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="./index.html">Início</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./cadastro_contas.html">Cadastros de Contas</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./lancamentos.html">Lançamentos</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Relatórios</a>
+                                <div class="dropdown-menu">
+                                  <a class="dropdown-item" href="./relatorio_balanco.html">Relatório Balanço</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a class="dropdown-item" href="./relatorio_dre.html">Relatório DRE</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a class="dropdown-item" href="./relatorio_pc.html">Relatório de PC</a>
+                                  <div class="dropdown-divider"></div>
+                                  <a class="dropdown-item" href="./relatorio_razao.html">Relatório de Razão</a>
+                                </div>
+                              </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        Lançamentos
+    </div>    
 </body>
 </html>
