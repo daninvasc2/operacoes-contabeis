@@ -47,11 +47,14 @@ form.addEventListener('submit', function (event) {
     form.reset();
 });
 
+
+
 btnFiltro.addEventListener('click', () => {
     let codigo = inputFiltro.value;
-    let contas = getFromLocalStorage('contas') || [];
+
+    let contas = [];
     if(codigo != ""){
-        contas = contas.filter((c) => Number(c.codigo) == Number(codigo));
+        contas = filtrarContaPorCodigo(codigo);
     }
     limparTabela();
     atualizarTabela(contas);
@@ -86,14 +89,23 @@ function atualizarTabela(contasParam = false) {
     });
 }
 
-function excluirConta(codigo) {
+function excluirConta(codigo, force = false) {
     const contas = getFromLocalStorage('contas') || [];
-    $('#exampleModal').modal('show');
-    $("#texto-exclusao").textContent()
-    return;
+    $("#texto-exclusao").text("Deseja excluir a conta " + codigo + "?");
+
+    const btnExcluir = document.querySelector('#btn-modal-excluir');
+    btnExcluir.onclick = function () {
+        excluirConta(codigo, true);
+    };
+
+    if (!force) {
+        return;
+    }
+
     const novaLista = contas.filter(function (conta) {
         return conta.codigo != codigo;
     });
+
     saveToLocalStorage('contas', novaLista);
     atualizarTabela();
 }
