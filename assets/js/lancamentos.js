@@ -1,6 +1,9 @@
-const codigo_credora = document.getElementById('codigo-credora');
-const codigo_devedora = document.getElementById('codigo-devedora');
+const codigo_credora = document.getElementById('codigo_credora');
+const codigo_devedora = document.getElementById('codigo_devedora');
 const form = document.getElementById('lancForm');
+const tableBody = document.querySelector('#lancTable tbody');
+
+document.onload = atualizarTabela();
 
 codigo_credora.addEventListener('blur', () => {
     let codigo = codigo_credora.value;
@@ -41,6 +44,27 @@ form.addEventListener('submit', (event) => {
     lancamentos.push(lancamento);
     saveToLocalStorage('lancamentos', lancamentos);
 
-    // atualizarTabela();
+    atualizarTabela();
     form.reset();
-})
+});
+
+function atualizarTabela(){
+    const lancamentos = getFromLocalStorage('lancamentos') || [];
+    tableBody.innerHTML = '';
+    lancamentos.forEach(function (lancamento) {
+        const tr = document.createElement('tr');
+        const conta_credora = filtrarContaPorCodigo(lancamento.codigo_credora);
+        const conta_devedora = filtrarContaPorCodigo(lancamento.codigo_devedora);
+
+        const data_formatada = lancamento.data.split('-');
+        lancamento.data = `${data_formatada[2]}/${data_formatada[1]}/${data_formatada[0]}`;
+
+        tr.innerHTML = `
+            <td>${conta_credora[0].codigo} - ${conta_credora[0].nome}</td>
+            <td>${conta_devedora[0].codigo} - ${conta_devedora[0].nome}</td>
+            <td>${lancamento.data}</td>
+            <td>${lancamento.valor}</td>
+        `;
+        tableBody.appendChild(tr);
+    });
+}
