@@ -13,6 +13,8 @@
     <script src="assets/bootstrap/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/db.js"></script>
+    <script src="assets/js/utils.js"></script>
     <!-- import jquery from assets folder -->
 </head>
 <body>
@@ -54,8 +56,78 @@
             </nav>
         </div>
     </header>
-    <div class="container">
-        Lançamentos
-    </div>    
+
+    <main class="container">
+        <h3>Lançamento de Transações</h3>
+        <form id="lancForm">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label class="form-label" for="codigo-credora">Código da conta credora</label>
+                        <input class="form-control" type="text" name="codigo-credora" id="codigo-credora" placeholder="Digite o código da conta credora" required>            
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label class="form-label" for="codigo-devedora">Código da conta devedora</label>
+                        <input class="form-control" type="text" name="codigo-devedora" id="codigo-devedora" placeholder="Digite o código da conta devedora" required>            
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label class="form-label" for="valor">Valor</label>
+                        <input class="form-control" type="text" name="valor" id="valor" placeholder="Digite o valor da transação" required>            
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label class="form-label" for="nome-credora">Nome da conta credora</label>
+                        <input class="form-control" type="text" name="nome-credora" id="nome-credora" disabled>            
+                    </div>
+                </div>
+
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label class="form-label" for="nome-devedora">Nome da conta devedora</label>
+                        <input class="form-control" type="text" name="nome-devedora" id="nome-devedora" disabled>            
+                    </div>
+                </div>
+
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label class="form-label" for="data">Data</label>
+                        <input class="form-control" type="date" name="data" id="data" required>            
+                    </div>
+                </div>
+
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label class="form-label">&nbsp;</label>
+                        <button type="submit" class="form-control btn btn-outline-secondary">Cadastrar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <h3>Lançamentos</h3>
+        <table id="lancTable" class="table table-stripped">
+            <thead>
+                <tr>
+                    <th>Conta credora</th>
+                    <th>Conta devedora</th>
+                    <th>Valor</th>
+                    <th>Data</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </main>
+
+    <footer>
+        <script src="assets/js/lancamentos.js"></script>
+    </footer>   
 </body>
 </html>

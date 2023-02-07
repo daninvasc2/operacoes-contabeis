@@ -22,13 +22,14 @@ form.addEventListener('submit', function (event) {
     form.reset();
 });
 
+
+
 btnFiltro.addEventListener('click', () => {
     let codigo = inputFiltro.value;
-    // console.log(aux);
-    let contas = getFromLocalStorage('contas') || [];
-    // console.log(contas)
+
+    let contas = [];
     if(codigo != ""){
-        contas = contas.filter((c) => Number(c.codigo) == Number(codigo));
+        contas = filtrarContaPorCodigo(codigo);
     }
     limparTabela();
     contas.forEach(function (conta) {
