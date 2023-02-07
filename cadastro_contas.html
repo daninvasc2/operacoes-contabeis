@@ -78,7 +78,12 @@
                 </div>
             </div>
         </form>
-        <h3>Listagem das contas</h3>
+        <div class="row">
+            <h3 class="col-md-4">Listagem das contas</h3>
+            <span class="col-md-4"></span>
+            <input id="inputCodigoFiltro" type="text" class="form-control col-md-3 mb-1 mr-1" placeholder="Insira o código do PC">
+            <button id="filtrarPorCodigo" class="btn btn-secondary mb-1">Filtrar</button>
+        </div>
         <table id="contasTable" class="table table-stripped">
             <thead>
                 <tr>

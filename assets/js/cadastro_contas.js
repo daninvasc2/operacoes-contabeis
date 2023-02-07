@@ -1,5 +1,7 @@
 const form = document.querySelector('#contasForm');
 const tableBody = document.querySelector('#contasTable tbody');
+const inputFiltro = document.querySelector('#inputCodigoFiltro');
+const btnFiltro = document.querySelector('#filtrarPorCodigo');
 
 document.onload = atualizarTabela();
 
@@ -19,6 +21,34 @@ form.addEventListener('submit', function (event) {
     atualizarTabela();
     form.reset();
 });
+
+btnFiltro.addEventListener('click', () => {
+    let codigo = inputFiltro.value;
+    // console.log(aux);
+    let contas = getFromLocalStorage('contas') || [];
+    // console.log(contas)
+    if(codigo != ""){
+        contas = contas.filter((c) => Number(c.codigo) == Number(codigo));
+    }
+    limparTabela();
+    contas.forEach(function (conta) {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td>${conta.codigo}</td>
+            <td>${conta.nome}</td>
+            <td>
+                <button class="btn btn-danger btn-sm" onclick="excluirConta(${conta.codigo})">
+                    Excluir
+                </button>
+            </td>
+        `;
+        tableBody.appendChild(tr);
+    });
+});
+
+function limparTabela() {
+    tableBody.innerHTML="";
+}
 
 function atualizarTabela() {
     const contas = getFromLocalStorage('contas') || [];
