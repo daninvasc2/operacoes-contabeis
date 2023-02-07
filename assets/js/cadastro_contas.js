@@ -4,6 +4,8 @@ const codigoConta = document.querySelector('#codigo');
 const nomeConta = document.querySelector('#nome');
 const btnSubmit = document.querySelector('#btn-submit');
 const modalExcluir = document.querySelector('#modalExcluir');
+const inputFiltro = document.querySelector('#inputCodigoFiltro');
+const btnFiltro = document.querySelector('#filtrarPorCodigo');
 
 document.onload = atualizarTabela();
 
@@ -40,8 +42,26 @@ form.addEventListener('submit', function (event) {
     form.reset();
 });
 
-function atualizarTabela() {
-    const contas = getFromLocalStorage('contas') || [];
+btnFiltro.addEventListener('click', () => {
+    let codigo = inputFiltro.value;
+    let contas = getFromLocalStorage('contas') || [];
+    if(codigo != ""){
+        contas = contas.filter((c) => Number(c.codigo) == Number(codigo));
+    }
+    limparTabela();
+    atualizarTabela(contas);
+});
+
+function limparTabela() {
+    tableBody.innerHTML="";
+}
+
+function atualizarTabela(contasParam = false) {
+    let contas = getFromLocalStorage('contas') || [];
+    if (contasParam) {
+        contas = contasParam;
+    }
+
     tableBody.innerHTML = '';
     contas.forEach(function (conta) {
         const tr = document.createElement('tr');
@@ -49,10 +69,10 @@ function atualizarTabela() {
             <td>${conta.codigo}</td>
             <td>${conta.nome}</td>
             <td>
-                <button class="btn btn-secondary btn-sm" onclick="editarConta(${conta.codigo})">
+                <button class="btn btn-secondary btn-sm" onclick="editarConta('${conta.codigo}')">
                     Editar
                 </button>
-                <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal" onclick="excluirConta(${conta.codigo})">
+                <button class="btn btn-danger btn-sm" data-toggle="modal" data-target="#exampleModal" onclick="excluirConta('${conta.codigo}')">
                     Excluir
                 </button>
             </td>
