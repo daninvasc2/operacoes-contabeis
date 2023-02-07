@@ -9,7 +9,12 @@ const btnFiltro = document.querySelector('#filtrarPorCodigo');
 
 document.onload = atualizarTabela();
 
+$('#exampleModal').on('shown.bs.modal', function () {
+    console.log('teste');
+});
+
 form.addEventListener('submit', function (event) {
+    console.log($("#exampleModal"));
     event.preventDefault();
     const formData = new FormData(form);
     const conta = {};
@@ -83,6 +88,9 @@ function atualizarTabela(contasParam = false) {
 
 function excluirConta(codigo) {
     const contas = getFromLocalStorage('contas') || [];
+    $('#exampleModal').modal('show');
+    $("#texto-exclusao").textContent()
+    return;
     const novaLista = contas.filter(function (conta) {
         return conta.codigo != codigo;
     });
