@@ -38,7 +38,6 @@ form.addEventListener('submit', (event) => {
     for (let [key, value] of formData) {
         lancamento[key] = value;
     }
-    console.log(lancamento);
 
     const lancamentos = getFromLocalStorage('lancamentos') || [];
     lancamentos.push(lancamento);
@@ -63,7 +62,7 @@ function atualizarTabela(){
             <td>${conta_credora[0].codigo} - ${conta_credora[0].nome}</td>
             <td>${conta_devedora[0].codigo} - ${conta_devedora[0].nome}</td>
             <td>${lancamento.data}</td>
-            <td>${lancamento.valor}</td>
+            <td>R$ ${Number(lancamento.valor).toFixed(2)}</td>
         `;
         tableBody.appendChild(tr);
     });
