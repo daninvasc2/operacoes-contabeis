@@ -39,8 +39,20 @@ filtrarPorData.addEventListener('click', () => {
         lancamento.data = `${data_formatada[2]}/${data_formatada[1]}/${data_formatada[0]}`;
         auxInicial = `${valor_formatado_incial[2]}/${valor_formatado_incial[1]}/${valor_formatado_incial[0]}`;
         auxFinal = `${valor_formatado_final[2]}/${valor_formatado_final[1]}/${valor_formatado_final[0]}`;
-        if ((auxInicial <= lancamento.data) && (lancamento.data <= auxFinal)) {
-            lista_final.push(lancamento);
+        if (auxFinal < auxInicial)
+            console.log("teste");
+        if (auxFinal < auxInicial) {
+            tableBody.innerHTML = '';
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td colspan="6" class="erro">A data final não pode ser maior que a data inicial</td>
+            `;
+            tableBody.appendChild(tr);
+        } else {
+            if ((auxInicial <= lancamento.data) && (lancamento.data <= auxFinal)) {
+                lista_final.push(lancamento);
+            }
+            tableBody.innerHTML = '';
         }
     });
 
@@ -53,8 +65,6 @@ filtrarPorData.addEventListener('click', () => {
             }
         }
     }
-
-    tableBody.innerHTML = '';
 
     lista_final.forEach(l => {
         const tr = document.createElement('tr');
