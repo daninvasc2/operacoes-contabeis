@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,16 +15,19 @@
     <script src="assets/js/db.js"></script>
     <script src="assets/js/utils.js"></script>
 </head>
+
 <body>
     <header class="d-print-none">
         <div style="height: 60px; background: #f2f9ee">
             <nav class="navbar navbar-expand-lg navbar-light top-navbar" data-toggle="sticky-onscroll">
                 <div class="container">
                     <a class="navbar-brand" href="#">Simulador Web Operações Contábeis</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-    
+
                     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                         <ul class="navbar-nav pull-right">
                             <li class="nav-item">
@@ -36,8 +40,11 @@
                                 <a class="nav-link" href="./lancamentos.html">Lançamentos</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Relatórios</a>
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                    aria-haspopup="true" aria-expanded="false">Relatórios</a>
                                 <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="./livro_diario.html">Livro Diário</a>
+                                    <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="./relatorio_balanco.html">Relatório Balanço</a>
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="./relatorio_dre.html">Relatório DRE</a>
@@ -46,7 +53,7 @@
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item" href="./relatorio_razao.html">Relatório de Razão</a>
                                 </div>
-                              </li>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -61,20 +68,23 @@
                 <div class="col-sm">
                     <div class="form-group">
                         <label class="form-label" for="codigo">Código da conta</label>
-                        <input class="form-control" type="text" name="codigo" id="codigo" placeholder="Digite o código da conta" required>            
+                        <input class="form-control" type="text" name="codigo" id="codigo"
+                            placeholder="Digite o código da conta" required>
                     </div>
                 </div>
-                
+
                 <div class="col-sm">
                     <div class="form-group">
                         <label class="form-label" for="descricao">Nome da conta</label>
-                        <input class="form-control" type="text" name="nome" id="nome" placeholder="Digite o nome da conta" required>
+                        <input class="form-control" type="text" name="nome" id="nome"
+                            placeholder="Digite o nome da conta" required>
                     </div>
                 </div>
                 <div class="col-sm">
                     <div class="form-group">
                         <label class="form-label">&nbsp;</label>
-                        <button type="submit" id="btn-submit" class="form-control btn btn-outline-secondary">Cadastrar</button>
+                        <button type="submit" id="btn-submit"
+                            class="form-control btn btn-outline-secondary">Cadastrar</button>
                     </div>
                 </div>
             </div>
@@ -82,7 +92,8 @@
         <div class="row">
             <h3 class="col-md-4">Listagem das contas</h3>
             <span class="col-md-4"></span>
-            <input id="inputCodigoFiltro" type="text" class="form-control col-md-3 mb-1 mr-1" placeholder="Insira o código do PC">
+            <input id="inputCodigoFiltro" type="text" class="form-control col-md-3 mb-1 mr-1"
+                placeholder="Insira o código do PC">
             <button id="filtrarPorCodigo" class="btn btn-secondary mb-1">Filtrar</button>
         </div>
         <table id="contasTable" class="table table-stripped">
@@ -96,30 +107,33 @@
             <tbody></tbody>
         </table>
     </main>
-    
+
     <footer>
         <script src="assets/js/cadastro_contas.js"></script>
     </footer>
 
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Aviso</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Aviso</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <span id="texto-exclusao"></span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" id="btn-modal-excluir" class="btn btn-danger"
+                        data-dismiss="modal">Excluir</button>
+                </div>
+            </div>
         </div>
-        <div class="modal-body">
-            <span id="texto-exclusao"></span>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-          <button type="button" id="btn-modal-excluir" class="btn btn-danger" data-dismiss="modal">Excluir</button>
-        </div>
-      </div>
     </div>
-  </div>
 </body>
+
 </html>

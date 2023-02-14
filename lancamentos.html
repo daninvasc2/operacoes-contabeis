@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,16 +18,19 @@
     <script src="assets/js/utils.js"></script>
     <!-- import jquery from assets folder -->
 </head>
+
 <body>
-    <header >
+    <header>
         <div style="height: 60px; background: #f2f9ee">
             <nav class="navbar navbar-expand-lg navbar-light top-navbar" data-toggle="sticky-onscroll">
                 <div class="container">
                     <a class="navbar-brand" href="./index.html">Simulador Web Operações Contábeis</a>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-    
+
                     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                         <ul class="navbar-nav pull-right">
                             <li class="nav-item">
@@ -39,17 +43,20 @@
                                 <a class="nav-link" href="./lancamentos.html">Lançamentos</a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Relatórios</a>
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                    aria-haspopup="true" aria-expanded="false">Relatórios</a>
                                 <div class="dropdown-menu">
-                                  <a class="dropdown-item" href="./relatorio_balanco.html">Relatório Balanço</a>
-                                  <div class="dropdown-divider"></div>
-                                  <a class="dropdown-item" href="./relatorio_dre.html">Relatório DRE</a>
-                                  <div class="dropdown-divider"></div>
-                                  <a class="dropdown-item" href="./relatorio_pc.html">Relatório de PC</a>
-                                  <div class="dropdown-divider"></div>
-                                  <a class="dropdown-item" href="./relatorio_razao.html">Relatório de Razão</a>
+                                    <a class="dropdown-item" href="./livro_diario.html">Livro Diário</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="./relatorio_balanco.html">Relatório Balanço</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="./relatorio_dre.html">Relatório DRE</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="./relatorio_pc.html">Relatório de PC</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="./relatorio_razao.html">Relatório de Razão</a>
                                 </div>
-                              </li>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -64,28 +71,32 @@
                 <div class="col-sm-3">
                     <div class="form-group">
                         <label class="form-label" for="codigo_credora">Código da conta credora</label>
-                        <input class="form-control" type="text" name="codigo_credora" id="codigo_credora" placeholder="Digite o código da conta credora" required>            
+                        <input class="form-control" type="text" name="codigo_credora" id="codigo_credora"
+                            placeholder="Digite o código da conta credora" required>
                     </div>
                 </div>
 
                 <div class="col-sm-3">
                     <div class="form-group">
                         <label class="form-label" for="codigo_devedora">Código da conta devedora</label>
-                        <input class="form-control" type="text" name="codigo_devedora" id="codigo_devedora" placeholder="Digite o código da conta devedora" required>            
+                        <input class="form-control" type="text" name="codigo_devedora" id="codigo_devedora"
+                            placeholder="Digite o código da conta devedora" required>
                     </div>
                 </div>
 
                 <div class="col-sm-3">
                     <div class="form-group">
                         <label class="form-label" for="valor">Valor</label>
-                        <input class="form-control" step="0.01" type="number" name="valor" id="valor" placeholder="Digite o valor da transação" required>            
+                        <input class="form-control" step="0.01" type="number" name="valor" id="valor"
+                            placeholder="Digite o valor da transação" required>
                     </div>
                 </div>
 
                 <div class="col-sm-3">
                     <div class="form-group">
                         <label class="form-label" for="valor">Histórico</label>
-                        <textarea class="form-control" name="historico" id="historico" placeholder="Digite o histórico da transação" required></textarea>
+                        <textarea class="form-control" name="historico" id="historico"
+                            placeholder="Digite o histórico da transação" required></textarea>
                     </div>
                 </div>
             </div>
@@ -93,21 +104,21 @@
                 <div class="col-sm">
                     <div class="form-group">
                         <label class="form-label" for="nome-credora">Nome da conta credora</label>
-                        <input class="form-control" type="text" id="nome-credora" disabled>            
+                        <input class="form-control" type="text" id="nome-credora" disabled>
                     </div>
                 </div>
 
                 <div class="col-sm">
                     <div class="form-group">
                         <label class="form-label" for="nome-devedora">Nome da conta devedora</label>
-                        <input class="form-control" type="text" id="nome-devedora" disabled>            
+                        <input class="form-control" type="text" id="nome-devedora" disabled>
                     </div>
                 </div>
 
                 <div class="col-sm">
                     <div class="form-group">
                         <label class="form-label" for="data">Data</label>
-                        <input class="form-control" type="date" name="data" id="data" required>            
+                        <input class="form-control" type="date" name="data" id="data" required>
                     </div>
                 </div>
 
@@ -135,6 +146,7 @@
 
     <footer>
         <script src="assets/js/lancamentos.js"></script>
-    </footer>   
+    </footer>
 </body>
+
 </html>
