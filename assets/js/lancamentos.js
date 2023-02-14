@@ -35,11 +35,13 @@ form.addEventListener('submit', (event) => {
     event.preventDefault();
     const formData = new FormData(form);
     const lancamento = {};
+    const lancamentos = getFromLocalStorage('lancamentos') || [];
+    lancamento.id = lancamentos.length + 1;
+
     for (let [key, value] of formData) {
         lancamento[key] = value;
     }
 
-    const lancamentos = getFromLocalStorage('lancamentos') || [];
     lancamentos.push(lancamento);
     saveToLocalStorage('lancamentos', lancamentos);
 
@@ -49,6 +51,11 @@ form.addEventListener('submit', (event) => {
 
 function atualizarTabela(){
     const lancamentos = getFromLocalStorage('lancamentos') || [];
+    console.log(lancamentos);
+    if (lancamentos.length < 1) {
+        return;
+    }
+
     tableBody.innerHTML = '';
     lancamentos.forEach(function (lancamento) {
         const tr = document.createElement('tr');
