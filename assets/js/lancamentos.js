@@ -5,6 +5,19 @@ const tableBody = document.querySelector('#lancTable tbody');
 
 document.onload = atualizarTabela();
 
+$(document).ready(function(){
+    $('.currency').inputmask('currency', {
+      radixPoint: ',',
+      groupSeparator: '.',
+      allowMinus: false,
+      prefix: 'R$ ',
+      autoGroup: true,
+      digits: 2,
+      digitsOptional: false,
+      placeholder: '0'
+    });
+});
+
 codigo_credora.addEventListener('blur', () => {
     let codigo = codigo_credora.value;
     let contas = [];
@@ -39,6 +52,10 @@ form.addEventListener('submit', (event) => {
     lancamento.id = lancamentos.length + 1;
 
     for (let [key, value] of formData) {
+        if (key == 'valor') {
+            value = value.replace('R$ ', '').replace('.', '').replace(',', '.');
+        }
+
         lancamento[key] = value;
     }
 
