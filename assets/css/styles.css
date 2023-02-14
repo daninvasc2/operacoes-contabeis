@@ -1,3 +1,10 @@
 main {
   /* margin: 0 2rem; */
 }
+
+.col-btn {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 10px;
+  margin : 1rem 0;
+}

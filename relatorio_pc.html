@@ -18,7 +18,7 @@
     <script src="assets/js/utils.js"></script>
 </head>
 <body>
-    <header >
+    <header class="d-print-none">
         <div style="height: 60px; background: #f2f9ee">
             <nav class="navbar navbar-expand-lg navbar-light top-navbar" data-toggle="sticky-onscroll">
                 <div class="container">
@@ -57,22 +57,29 @@
         </div>
     </header>
     <div class="container">
-        Relatorio PC
 
-        <table class="table table-stripped">
+        <div class="row">
+            <h3 class="col-md-6">Relatório de Plano de Contas</h3>
+            <div class="col-md-6 col-btn d-print-none">
+                <button class="btn btn-primary" onClick="atualizarTabela()">
+                    Gerar Relatório
+                </button>
+                <button class="btn btn-primary" onClick="window.print()">
+                    Imprimir
+                </button>
+            </div>
+        </div>
+
+        <table id="contasTable" class="table table-stripped">
             <thead>
                 <tr>
-                    <th>A</th>
-                    <th>b</th>
-                    <th>C</th>
-                    <th>D</th>
+                    <th>Código</th>
+                    <th>Nome</th>
                 </tr>
             </thead>
-            <tbody id="resultadoRelatorio">
-
-            </tbody>
+            <tbody></tbody>
         </table>
     </div> 
-    
+    <script src="assets/js/relatorio_pc.js"></script>
 </body>
 </html>
