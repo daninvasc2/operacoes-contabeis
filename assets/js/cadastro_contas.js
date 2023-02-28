@@ -76,6 +76,7 @@ function atualizarTabela(contasParam = false) {
         tr.innerHTML = `
             <td>${conta.codigo}</td>
             <td>${conta.nome}</td>
+            <td>${retornaTipoConta(conta.tipo)}</td>
             <td>
                 <button class="btn btn-secondary btn-sm" onclick="editarConta('${conta.codigo}')">
                     Editar
@@ -87,6 +88,23 @@ function atualizarTabela(contasParam = false) {
         `;
         tableBody.appendChild(tr);
     });
+}
+
+function retornaTipoConta(tipo) {
+    
+    switch (tipo) {
+        case 'A':
+            return 'Ativo';
+        case 'P':
+            return 'Passivo';
+        case 'R':
+            return 'Receita';
+        case 'D':
+            return 'Despesa';
+        case 'PL':
+            return 'Patrimônio Líquido';
+    }
+
 }
 
 function excluirConta(codigo, force = false) {
