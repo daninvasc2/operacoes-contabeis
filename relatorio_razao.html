@@ -6,17 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relatorio de Razão</title>
-    <!-- import bootstrap from assets folder -->
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <!-- import custom css from assets folder -->
     <link rel="stylesheet" href="assets/css/styles.css">
-    <!-- import bootstrap js from assets folder -->
     <script src="assets/bootstrap/jquery.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/db.js"></script>
     <script src="assets/js/utils.js"></script>
-    <!-- import jquery from assets folder -->
 </head>
 
 <body>
@@ -65,10 +61,15 @@
     </header>
     <div class="container">
 
+        <h3>Relatório de Razão</h3>
         <div class="row">
-            <h3 class="col-md-6">Relatório de Razão</h3>
+            <div class="col-md-6 mt-3">
+                <select class="form-control" id="selectConta">
+                    <option value="">Selecione uma conta</option>
+                </select>
+            </div>
             <div class="col-md-6 col-btn d-print-none">
-                <button class="btn btn-primary" onClick="atualizarTabela()">
+                <button type="button" class="btn btn-primary" onclick="atualizarTabela()">
                     Gerar Relatório
                 </button>
                 <button class="btn btn-primary" onClick="window.print()">
@@ -77,21 +78,30 @@
             </div>
         </div>
 
+        <h4 class="text-center" id="tituloConta"></h4>
         <table class="table table-stripped">
             <thead>
                 <tr>
-                    <th>A</th>
-                    <th>b</th>
-                    <th>C</th>
-                    <th>D</th>
+                    <th>Cód. Lançamento</th>
+                    <th>Conta</th>
+                    <th>Histórico</th>
+                    <th>Débito</th>
+                    <th>Crédito</th>
                 </tr>
             </thead>
             <tbody id="resultadoRelatorio">
 
             </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3" class="text-right"><h5> Total: </h5></td>
+                    <td id="saldoConta"></td>
+                </tr>
+            </tfoot>
         </table>
     </div>
 
+    <script src="assets/js/relatorio_razao.js"></script>
 </body>
 
 </html>

@@ -40,7 +40,6 @@ filtrarPorData.addEventListener('click', () => {
         auxInicial = `${valor_formatado_incial[2]}/${valor_formatado_incial[1]}/${valor_formatado_incial[0]}`;
         auxFinal = `${valor_formatado_final[2]}/${valor_formatado_final[1]}/${valor_formatado_final[0]}`;
         if (auxFinal < auxInicial)
-            console.log("teste");
         if (auxFinal < auxInicial) {
             tableBody.innerHTML = '';
             const tr = document.createElement('tr');
