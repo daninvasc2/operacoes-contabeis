@@ -80,6 +80,41 @@
                             placeholder="Digite o nome da conta" required>
                     </div>
                 </div>
+
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label class="form-label" for="descricao">Tipo da conta</label>
+                        <select name="tipo" id="tipo" class="form-control" required>
+                            <option value="">Selecione o tipo da conta</option>
+                            <option value="A">Ativo</option>
+                            <option value="P">Passivo</option>
+                            <option value="R">Receita</option>
+                            <option value="D">Despesa</option>
+                            <option value="PL">Patrimônio Líquido</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label class="form-label" for="saldo_anterior">Saldo anterior</label>
+                        <input class="form-control" id="saldo_anterior" name="saldo-anterior"
+                            placeholder="Digite o saldo anterior">
+                    </div>
+                </div>
+
+                <!-- Tipo Saldo -->
+
+                <div class="col-sm">
+                    <div class="form-group">
+                        <label class="form-label">Tipo Saldo Anterior</label>
+                        <select name="tipo_saldo" id="tipo_saldo" class="form-control">
+                            <option value="D">Devedor</option>
+                            <option value="C">Credor</option>
+                        </select>
+                    </div>
+                </div>
+
                 <div class="col-sm">
                     <div class="form-group">
                         <label class="form-label">&nbsp;</label>
@@ -101,6 +136,7 @@
                 <tr>
                     <th>Código</th>
                     <th>Nome</th>
+                    <th>Tipo</th>
                     <th>Opções</th>
                 </tr>
             </thead>
