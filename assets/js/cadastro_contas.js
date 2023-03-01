@@ -6,6 +6,9 @@ const btnSubmit = document.querySelector('#btn-submit');
 const modalExcluir = document.querySelector('#modalExcluir');
 const inputFiltro = document.querySelector('#inputCodigoFiltro');
 const btnFiltro = document.querySelector('#filtrarPorCodigo');
+const saldoAnterior = document.querySelector('#saldo_anterior');
+const tipoConta = document.querySelector('#tipo');
+const tipoSaldo = document.querySelector('#tipo_saldo');
 
 document.onload = atualizarTabela();
 
@@ -28,6 +31,9 @@ form.addEventListener('submit', function (event) {
         const novaLista = contas.map(function (conta) {
             if (conta.codigo == codigoConta.value) {
                 conta.nome = nomeConta.value;
+                conta.saldo_anterior = saldoAnterior.value;
+                conta.tipo = tipoConta.value;
+                conta.tipo_saldo = tipoSaldo.value;
             }
             return conta;
         });
@@ -136,6 +142,9 @@ function editarConta(codigo) {
 
     codigoConta.value = conta.codigo;
     nomeConta.value = conta.nome;
+    saldoAnterior.value = conta.saldo_anterior;
+    tipoConta.value = conta.tipo;
+    tipoSaldo.value = conta.tipo_saldo;
 
     btnSubmit.value = 'Atualizar';
     btnSubmit.textContent = 'Atualizar';
