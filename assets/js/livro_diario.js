@@ -18,10 +18,10 @@ function atualizarTabela() {
         lancamento.data = `${data_formatada[2]}/${data_formatada[1]}/${data_formatada[0]}`;
 
         tr.innerHTML = `
-        <td>${lancamento.id}</td>
-            <td>${conta_credora[0].codigo} - ${conta_credora[0].nome}</td>
+            <td>${lancamento.id}</td>
             <td>${lancamento.data}</td>
-            <td>${conta_devedora[0].codigo} - ${conta_devedora[0].nome}</td>
+            <td>${conta_credora[0].codigo}</td>
+            <td>${conta_devedora[0].codigo}</td>
             <td>${lancamento.historico}</td>
             <td>R$ ${Number(lancamento.valor).toFixed(2)}</td>
         `;
