@@ -1,5 +1,9 @@
 function filtrarContaPorCodigo(codigo){
     let contas = getFromLocalStorage('contas') || [];
+    // if (codigo == null || codigo.trim() == '') {
+    //     return contas;
+    // }
+
     return contas.filter((c) => c.codigo == codigo);
 }
 

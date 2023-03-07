@@ -68,6 +68,7 @@ form.addEventListener('submit', (event) => {
 
 function atualizarTabela(){
     const lancamentos = getFromLocalStorage('lancamentos') || [];
+    console.log(lancamentos);
     if (lancamentos.length < 1) {
         return;
     }

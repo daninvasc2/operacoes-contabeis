@@ -12,12 +12,7 @@ const tipoSaldo = document.querySelector('#tipo_saldo');
 
 document.onload = atualizarTabela();
 
-$('#exampleModal').on('shown.bs.modal', function () {
-    console.log('teste');
-});
-
 form.addEventListener('submit', function (event) {
-    console.log($("#exampleModal"));
     event.preventDefault();
     const formData = new FormData(form);
     const conta = {};
@@ -59,9 +54,7 @@ btnFiltro.addEventListener('click', () => {
     let codigo = inputFiltro.value;
 
     let contas = [];
-    if(codigo != ""){
-        contas = filtrarContaPorCodigo(codigo);
-    }
+    contas = filtrarContaPorCodigo(codigo);
     limparTabela();
     atualizarTabela(contas);
 });
@@ -142,7 +135,7 @@ function editarConta(codigo) {
 
     codigoConta.value = conta.codigo;
     nomeConta.value = conta.nome;
-    saldoAnterior.value = conta.saldo_anterior;
+    saldoAnterior.value = conta.saldo_anterior != null ? conta.saldo_anterior : 0;
     tipoConta.value = conta.tipo;
     tipoSaldo.value = conta.tipo_saldo;
 
