@@ -59,7 +59,7 @@ function atualizarTabela(){
         tdAtivo.innerHTML += stringTabela;
     });
 
-    tdPassivo.innerHTML += `<h6>Patrimônio Líquido</h6>`;
+    // tdPassivo.innerHTML += `<h6>Patrimônio Líquido</h6>`;
     
     contasPatrimonio.forEach(function(conta){
         let stringTabela = '';
