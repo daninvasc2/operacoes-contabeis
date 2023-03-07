@@ -60,13 +60,8 @@ filtrarPorData.addEventListener('click', () => {
             `;
             tableBody.appendChild(tr);
         } else {
-            console.log(auxInicial <= lancamento.data);
-            console.log(lancamento.data <= auxFinal);
-            // console.log(auxInicial);
-            // console.log(lancamento.data);
-            // console.log(auxInicial);
-
-            if (auxInicial <= lancamento.data && lancamento.data <= auxFinal) {
+            console.log(new Date(data_formatada))
+            if (new Date(valor_incial) <= new Date(data_formatada) && new Date(data_formatada) <= new Date(valor_final)) {
                 // console.log('else');    
                 lista_final.push(lancamento);
             }
