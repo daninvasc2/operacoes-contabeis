@@ -2,7 +2,7 @@ const tableBody = document.querySelector('#lancTable tbody');
 const inputCodigoFiltroInicial = document.querySelector('#inputCodigoFiltroInicial');
 const inputCodigoFiltroFinal = document.querySelector('#inputCodigoFiltroFinal');
 const filtrarPorData = document.querySelector('#filtrarPorData');
-
+const btnPrint = document.querySelector('#btnPrint');
 // document.onload = atualizarTabela();
 
 // function atualizarTabela() {

@@ -1,4 +1,5 @@
 const tableBody = document.querySelector('#contasTable tbody');
+const btnPrint = document.querySelector('#btnPrint');
 
 function atualizarTabela() {
     let contas = getFromLocalStorage('contas') || [];
@@ -12,4 +13,5 @@ function atualizarTabela() {
         `;
         tableBody.appendChild(tr);
     });
+    btnPrint.classList.remove('d-none');
 }

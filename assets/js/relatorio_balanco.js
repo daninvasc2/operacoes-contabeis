@@ -2,7 +2,7 @@ const tdPassivo = document.querySelector('#passivo');
 const tdAtivo = document.querySelector('#ativo');
 const trTotais = document.querySelector('#totais');
 const tabelaBalanco = document.querySelector('#tabelaBalanco');
-
+const btnPrint = document.querySelector('#btnPrint');
 
 function atualizarTabela(){
 
@@ -101,6 +101,6 @@ function atualizarTabela(){
     `;
     tabelaBalanco.appendChild(trTotais);
 
-
+    btnPrint.classList.remove('d-none');
 }
 
