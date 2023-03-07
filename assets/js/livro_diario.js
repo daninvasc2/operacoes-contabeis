@@ -18,10 +18,10 @@ function atualizarTabela() {
         lancamento.data = `${data_formatada[2]}/${data_formatada[1]}/${data_formatada[0]}`;
 
         tr.innerHTML = `
-        <td>${lancamento.id}</td>
-            <td>${conta_credora[0].codigo} - ${conta_credora[0].nome}</td>
+            <td>${lancamento.id}</td>
             <td>${lancamento.data}</td>
-            <td>${conta_devedora[0].codigo} - ${conta_devedora[0].nome}</td>
+            <td>${conta_credora[0].codigo}</td>
+            <td>${conta_devedora[0].codigo}</td>
             <td>${lancamento.historico}</td>
             <td>R$ ${Number(lancamento.valor).toFixed(2)}</td>
         `;
@@ -60,13 +60,8 @@ filtrarPorData.addEventListener('click', () => {
             `;
             tableBody.appendChild(tr);
         } else {
-            console.log(auxInicial <= lancamento.data);
-            console.log(lancamento.data <= auxFinal);
-            // console.log(auxInicial);
-            // console.log(lancamento.data);
-            // console.log(auxInicial);
-
-            if (auxInicial <= lancamento.data && lancamento.data <= auxFinal) {
+            console.log(new Date(data_formatada))
+            if (new Date(valor_incial) <= new Date(data_formatada) && new Date(data_formatada) <= new Date(valor_final)) {
                 // console.log('else');    
                 lista_final.push(lancamento);
             }
