@@ -3,28 +3,36 @@ const inputCodigoFiltroInicial = document.querySelector('#inputCodigoFiltroInici
 const inputCodigoFiltroFinal = document.querySelector('#inputCodigoFiltroFinal');
 const filtrarPorData = document.querySelector('#filtrarPorData');
 
-// document.onload = atualizarTabela();
+document.onload = atualizarTabela();
 
-// function atualizarTabela() {
-//     const lancamentos = getFromLocalStorage('lancamentos') || [];
-//     tableBody.innerHTML = '';
-//     lancamentos.forEach(function (lancamento) {
-//         const tr = document.createElement('tr');
-//         const conta_credora = filtrarContaPorCodigo(lancamento.codigo_credora);
-//         const conta_devedora = filtrarContaPorCodigo(lancamento.codigo_devedora);
+function atualizarTabela() {
+    const lancamentos = getFromLocalStorage('lancamentos') || [];
+    tableBody.innerHTML = '';
+    lancamentos.forEach(function (lancamento) {
+        const tr = document.createElement('tr');
+        const conta_credora = filtrarContaPorCodigo(lancamento.codigo_credora);
+        const conta_devedora = filtrarContaPorCodigo(lancamento.codigo_devedora);
 
-//         const data_formatada = lancamento.data.split('-');
-//         lancamento.data = `${data_formatada[2]}/${data_formatada[1]}/${data_formatada[0]}`;
+        const data_formatada = lancamento.data.split('-');
+        lancamento.data = `${data_formatada[2]}/${data_formatada[1]}/${data_formatada[0]}`;
 
-//         tr.innerHTML = `
-//             <td>${conta_credora[0].codigo} - codigota_credora[0].nome}</td>
-//             <td>${conta_devedora[0].codigo} - ${conta_devedora[0].nome}</td>
-//             <td>${lancamento.data}</td>
-//             <td>R$ ${Number(lancamento.valor).toFixed(2)}</td>
-//         `;
-//         tableBody.appendChild(tr);
-//     });
-// }
+        tr.innerHTML = `
+            <td>${conta_credora[0].codigo} - ${conta_credora[0].nome}</td>
+            <td>${lancamento.data}</td>
+            <td>${conta_devedora[0].codigo} - ${conta_devedora[0].nome}</td>
+            <td>R$ ${Number(lancamento.valor).toFixed(2)}</td>
+        `;
+        // tr.innerHTML = `
+        //     <td>${l.id}</td>
+        //     <td>${l.data}</td>
+        //     <td>${l.codigo_credora}</td>
+        //     <td>${l.codigo_devedora}</td>
+        //     <td>${l.historico}</td>
+        //     <td>R$ ${Number(l.valor).toFixed(2)}</td>
+        // `;
+        tableBody.appendChild(tr);
+    });
+}
 
 filtrarPorData.addEventListener('click', () => {
     const lancamentos = getFromLocalStorage('lancamentos') || [];
@@ -33,7 +41,7 @@ filtrarPorData.addEventListener('click', () => {
     let auxInicial, auxFinal;
     let lista_final = [];
     lancamentos.forEach(lancamento => {
-        console.log(lancamento);
+        // console.log(lancamento);
         const data_formatada = lancamento.data.split('-');
         const valor_formatado_incial = valor_incial.split('-');
         const valor_formatado_final = valor_final.split('-');
@@ -50,9 +58,13 @@ filtrarPorData.addEventListener('click', () => {
             tableBody.appendChild(tr);
         } else {
             console.log(auxInicial <= lancamento.data);
-            console.log(lancamento.data <= valor_final);
-            if ((auxInicial <= lancamento.data) && (lancamento.data <= auxFinal)) {
-                console.log('else');    
+            console.log(lancamento.data <= auxFinal);
+            // console.log(auxInicial);
+            // console.log(lancamento.data);
+            // console.log(auxInicial);
+
+            if (auxInicial <= lancamento.data && lancamento.data <= auxFinal) {
+                // console.log('else');    
                 lista_final.push(lancamento);
             }
             tableBody.innerHTML = '';
