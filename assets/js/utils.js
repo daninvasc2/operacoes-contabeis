@@ -27,3 +27,19 @@ function retornarSaldoConta(codigo){
 
     return Math.abs(saldo);
 }
+
+function retornaLucroDoDRE(){
+    let receitas = 0;
+    let despesas = 0;
+    let contas = getFromLocalStorage('contas') || [];
+
+    contas.forEach(function(conta){
+        if (conta.tipo == 'R') {
+            receitas += retornarSaldoConta(conta.codigo);
+        }else if(conta.tipo == 'D'){
+            despesas += retornarSaldoConta(conta.codigo);
+        }
+    });
+
+    return receitas - despesas;
+}

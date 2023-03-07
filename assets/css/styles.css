@@ -20,3 +20,10 @@ main {
 .cor-credito {
   color: rgb(0, 255, 0);
 }
+
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100dvh - 60px);
+}
