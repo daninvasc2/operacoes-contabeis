@@ -13,4 +13,5 @@ function getFromLocalStorage(key) {
 
 function clearLocalStorage() {
     localStorage.clear();
+    location.href = "/cadastro_contas.html";
 }

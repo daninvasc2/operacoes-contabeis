@@ -3,6 +3,7 @@ const selectConta = document.querySelector('#selectConta');
 const saldoConta = document.querySelector('#saldoConta');
 const tituloConta = document.querySelector('#tituloConta');
 const tdTotal = document.querySelector('#tdTotal');
+const btnPrint = document.querySelector('#btnPrint');
 
 document.onload = populaSelectComContas();
 
@@ -62,6 +63,8 @@ function atualizarTabela() {
         $('#saldoConta').attr('colspan', 1);
         $('#saldoConta').attr('class', 'text-left');
     }
+
+    btnPrint.classList.remove('d-none');
 }
 
 function populaSelectComContas() {

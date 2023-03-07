@@ -1,6 +1,6 @@
 const resultadoRelatorio = document.querySelector('#resultadoRelatorio');
 const btnGerarRelatorio = document.querySelector('#btnGerarRelatorio');
-
+const btnPrint = document.querySelector('#btnPrint');
 
 function atualizarTabela(){
     //calcular receitas despesas
@@ -67,5 +67,5 @@ function atualizarTabela(){
         <td>${saldo}</td>
     `;
     resultadoRelatorio.appendChild(tr);
-    
+    btnPrint.classList.remove('d-none');
 }
