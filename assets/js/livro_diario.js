@@ -33,13 +33,14 @@ filtrarPorData.addEventListener('click', () => {
     let auxInicial, auxFinal;
     let lista_final = [];
     lancamentos.forEach(lancamento => {
+        console.log(lancamento);
         const data_formatada = lancamento.data.split('-');
         const valor_formatado_incial = valor_incial.split('-');
         const valor_formatado_final = valor_final.split('-');
         lancamento.data = `${data_formatada[2]}/${data_formatada[1]}/${data_formatada[0]}`;
         auxInicial = `${valor_formatado_incial[2]}/${valor_formatado_incial[1]}/${valor_formatado_incial[0]}`;
         auxFinal = `${valor_formatado_final[2]}/${valor_formatado_final[1]}/${valor_formatado_final[0]}`;
-        if (auxFinal < auxInicial)
+        // if (auxFinal < auxInicial)
         if (auxFinal < auxInicial) {
             tableBody.innerHTML = '';
             const tr = document.createElement('tr');
@@ -48,7 +49,10 @@ filtrarPorData.addEventListener('click', () => {
             `;
             tableBody.appendChild(tr);
         } else {
+            console.log(auxInicial <= lancamento.data);
+            console.log(lancamento.data <= valor_final);
             if ((auxInicial <= lancamento.data) && (lancamento.data <= auxFinal)) {
+                console.log('else');    
                 lista_final.push(lancamento);
             }
             tableBody.innerHTML = '';
