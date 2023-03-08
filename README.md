@@ -2,14 +2,14 @@
 
 ## Descrição
 
-Este projeto é um simulador de operações contábeis que permite ao usuário realizar lançamentos e visualizar relatório como DRE, relatório de balanço entre outros.
+Este projeto é um simulador de operações contábeis que permite ao usuário cadastrar contas, realizar lançamentos e visualizar relatório como DRE, relatório de balanço entre outros.
 
 ## Funcionalidades
 
 - Cadastro de contas contábeis
 - Lançamento de transações
-- Geração de relatórios 
-- Entre outras
+- Geração de relatórios
+- Limpar os dados anteriormente lançados
 
 ## Instalação
 
