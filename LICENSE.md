@@ -1,6 +1,6 @@
 # Licença MIT
 
-Direitos autorais (c) 2023 Thiago Rocha, Daniel Nogueira, Henrique Lessa, Samer Macário, João Pedro Boechat, Eliabe Peres e Luiz Claúdio Silva
+Direitos autorais (c) 2023 Thiago Rocha, Daniel Nogueira, Henrique Lessa, Samer Macário, João Pedro Boechat, Eliabe Peres e Luiz Claudio Tavares Silva
 
 A permissão é concedida, gratuitamente, a qualquer pessoa que obtenha uma cópia deste software e dos arquivos de documentação associados (o "Software"), para negociar o Software sem restrições, incluindo, sem limitação, os direitos de uso, cópia, modificação e fusão , publicar, distribuir, sublicenciar e / ou vender cópias do Software e permitir que as pessoas a quem o Software é fornecido o façam, sujeitas às seguintes condições:
 
