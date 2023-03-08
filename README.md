@@ -25,7 +25,7 @@ Em seguida, abra o arquivo index.html no seu navegador.
 
 | Cargo | Nome | E-mail | Telefone |
 | --- | --- | --- | --- |
-| Auxiliar Técnico | Luiz Claúdio | luizctsilva@luizctsilva.adm.br | +55 (22) 99832-2992 |
+| Auxiliar Técnico | Luiz Claúdio Silva | luizctsilva@luizctsilva.adm.br | +55 (22) 99832-2992 |
 | Desenvolvedor | Thiago Rocha | thiagormnb@gmail.com | +55 (22) 988318609 |
 | Desenvolvedor | Daniel Nogueira | daninvasc@gmail.com | +55 (22) 99853-5031 |
 | Gerente de Projetos | Eliabe Peres | eliabeperes@gmail.com | +55 (22) 98874-6062 |
